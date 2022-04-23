@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/widgets/drawer.dart';
+import 'package:ecommerce_app/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -13,6 +14,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    var CatalogModel;
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -22,8 +24,14 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            const Text('hello '),
-            Image.asset("assets/images/my.png"),
+            ListView.builder(
+              itemCount: CatalogModel.items.length,
+              itemBuilder: (context, index) {
+                return ItemWidget(
+                  item: CatalogModel.items[index],
+                );
+              },
+            )
           ],
         ),
       ),

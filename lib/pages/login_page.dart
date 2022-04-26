@@ -33,7 +33,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           children: [
             Image.asset(
-              "assets/images/log_in.png",
+              "assets/images/logo.png",
               fit: BoxFit.fitHeight,
               height: 300,
             ),
@@ -53,12 +53,22 @@ class _LoginPageState extends State<LoginPage> {
               padding: const EdgeInsets.all(30.0),
               child: TextFormField(
                 decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(width: 0.5, color: Colors.blue),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     fillColor: Colors.white.withOpacity(0.2),
                     filled: true,
                     border: const UnderlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(50.0),
                       ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(width: 0.5, color: Colors.blue),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     labelText: 'Enter your user name ',
                     labelStyle:
@@ -82,12 +92,22 @@ class _LoginPageState extends State<LoginPage> {
               child: TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(width: 0.5, color: Colors.blue),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
                     fillColor: Colors.white.withOpacity(0.2),
                     filled: true,
                     border: const UnderlineInputBorder(
                       borderRadius: BorderRadius.all(
                         Radius.circular(100.0),
                       ),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          const BorderSide(width: 0.5, color: Colors.blue),
+                      borderRadius: BorderRadius.circular(10),
                     ),
                     labelText: 'enter your password ',
                     labelStyle:
@@ -101,7 +121,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             const SizedBox(
-              height: 100,
+              height: 10,
             ),
             ElevatedButton(
               onPressed: () {
@@ -111,7 +131,7 @@ class _LoginPageState extends State<LoginPage> {
               },
               child: const Text('log in '),
               style: ElevatedButton.styleFrom(
-                  primary: Colors.pink,
+                  primary: Colors.blue,
                   fixedSize: const Size(100, 50),
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(100))),

@@ -1,38 +1,26 @@
+import 'package:ecommerce_app/models/catalog.dart';
 import 'package:ecommerce_app/widgets/drawer.dart';
 import 'package:ecommerce_app/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  var myname = " PRABESH";
-
   @override
   Widget build(BuildContext context) {
-    var CatalogModel;
+    final dummyList = List.generate(20, (index) => CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        title: Text("WELCOME $myname"),
+        title: const Text("Catalog App"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          // ignore: prefer_const_literals_to_create_immutables
-          children: [
-            ListView.builder(
-              itemCount: CatalogModel.items.length,
-              itemBuilder: (context, index) {
-                return ItemWidget(
-                  item: CatalogModel.items[index],
-                );
-              },
-            )
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: dummyList[index],
+            );
+          },
         ),
       ),
       drawer: const MyDrawer(),

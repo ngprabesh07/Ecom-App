@@ -1,21 +1,20 @@
 class CatalogModel {
   static final items = [
     Item(
-      id: 1,
-      name: "iphone 12 pro ",
-      dic: "apple kop phone ho mula ",
-      price: 1204675,
-      color: "#33505a",
-      image:
-          "https://static.toiimg.com/thumb/resizemode-4,msid-78671024,imgsize-200,width-600/78671024.jpg",
-    )
+        id: 1,
+        name: "iPhone 12 Pro",
+        desc: "Apple iPhone 12th generation",
+        price: 999,
+        color: "#33505a",
+        image:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc")
   ];
 }
 
 class Item {
   final int id;
   final String name;
-  final String dic;
+  final String desc;
   final num price;
   final String color;
   final String image;
@@ -23,7 +22,7 @@ class Item {
   Item(
       {required this.id,
       required this.name,
-      required this.dic,
+      required this.desc,
       required this.price,
       required this.color,
       required this.image});
